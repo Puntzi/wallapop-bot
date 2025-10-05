@@ -175,25 +175,6 @@ El script `update.sh` incluye:
 - Health checks automáticos
 - Logs detallados del proceso
 
-## 📊 Estructura del Proyecto
-
-```
-wallapop-bot/
-├── 🐍 ssbo.py              # Script principal del bot
-├── 🗄️ dbhelper.py          # Gestión de base de datos
-├── 📋 requirements.txt     # Dependencias Python
-├── 🐳 Dockerfile          # Imagen Docker
-├── ⚙️ docker-compose.yml   # Orquestación
-├── 📖 README.md           # Documentación
-├── 📄 LICENSE             # Licencia MIT
-├── 🔄 update.sh           # Script de actualización
-├── ▶️ start.sh            # Script de inicio
-├── ⏹️ stop.sh             # Script de parada
-├── 🔧 setup-raspberry.sh  # Setup para Raspberry Pi
-├── 🏷️ VERSION            # Control de versiones
-└── 🚫 .gitignore          # Archivos ignorados
-```
-
 ## 🐛 Solución de Problemas
 
 ### ❌ Problemas Comunes
