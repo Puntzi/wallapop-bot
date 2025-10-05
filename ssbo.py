@@ -803,7 +803,9 @@ def handle_custom_price_input(message):
         
         # Verificar lógica de precios (min < max)
         if min_price and max_price:
-            if float(min_price) >= float(max_price):
+            min_val = float(min_price)
+            max_val = float(max_price)
+            if min_val >= max_val:
                 raise ValueError("El precio mínimo debe ser menor que el máximo")
         
         # Crear la búsqueda final
