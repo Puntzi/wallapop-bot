@@ -39,7 +39,7 @@ Bot de Telegram inteligente para automatizar búsquedas en Wallapop con notifica
 1. **Token de Bot**: Crear bot con [@BotFather](https://t.me/botfather)
 2. **Docker & Docker Compose**: [Instalar Docker](https://docs.docker.com/get-docker/)
 
-### 🐳 Instalación con Docker (Recomendado)
+### Instalación con Docker
 
 ```bash
 # 1. Clonar el repositorio
@@ -54,28 +54,6 @@ docker-compose up -d
 
 # 4. Ver logs
 docker-compose logs -f wallbot
-```
-
-### 🐍 Instalación Manual (Python)
-
-```bash
-# 1. Clonar y entrar al directorio
-git clone https://github.com/Puntzi/wallapop-bot.git
-cd wallapop-bot
-
-# 2. Crear entorno virtual
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate   # Windows
-
-# 3. Instalar dependencias
-pip install -r requirements.txt
-
-# 4. Configurar variables de entorno
-export BOT_TOKEN="tu_token_aqui"
-
-# 5. Ejecutar
-python ssbo.py
 ```
 
 ## ⚙️ Configuración
@@ -144,15 +122,6 @@ services:
 • "Nintendo Switch" + precio 200-300€ → Con rango de precio
 • Categoría "Móviles" + precio hasta 500€ → Búsqueda por categoría
 ```
-
-### 🔄 Script de Actualización Mejorado
-
-El script `update.sh` incluye:
-- Detección automática de cambios en Git
-- Reconstrucción inteligente solo cuando es necesario
-- Verificación de estado del contenedor
-- Health checks automáticos
-- Logs detallados del proceso
 
 ## 🐛 Solución de Problemas
 
