@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  wallbot:
+    build: .
+    container_name: wallapop-bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - PROFILE=docker
+    volumes:
+      # Persistir base de datos
+      - ./data:/app/data
+      # Persistir logs
+      - ./logs:/app/logs
+    networks:
+      - wallbot-network
+    
+    # Límites de recursos optimizados para Raspberry Pi
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.8'
+        reservations:
+          memory: 128M
+          cpus: '0.1'
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "pgrep", "-f", "python.*ssbo.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  wallbot-network:
+    driver: bridge
+
+volumes:
+  wallbot-data:
+    driver: local
+  wallbot-logs:
+    driver: local
